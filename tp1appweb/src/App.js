@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter , NavLink, Route, Routes} from 'react-router-dom';
+import { home } from './Components/Home';
+
 
 function App() {
   return (
@@ -17,23 +20,9 @@ function App() {
                             Home
                         </NavLink>
                     </div>
-                    <div style={{ margin: '10px' }}>
-                        <NavLink to="/about" style={({ isActive }) => ({ 
-                            color: isActive ? 'greenyellow' : 'white' })}>
-                            About
-                        </NavLink>
-                    </div>
-                    <div style={{ margin: '10px' }}>
-                        <NavLink to="/contact" style={({ isActive }) => ({ 
-                            color: isActive ? 'greenyellow' : 'white' })}>
-                            Contact
-                        </NavLink>
-                    </div>
                 </div>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
-                    <Route exact path="/about" element={<About />} />
-                    <Route exact path="/contact" element={<Contact />} />
                 </Routes>
             </BrowserRouter>
         </>
