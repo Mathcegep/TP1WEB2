@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class Fibonacie extends Component {
+class Tableau extends Component {
     render()
     {
         return (
@@ -11,4 +11,4 @@ class Fibonacie extends Component {
     }
 }
 
-export default Fibonacie;
+export default Tableau;
