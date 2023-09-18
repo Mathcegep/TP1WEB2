@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.main_menu
+{
+    display : flex;
+    background: black;
+    padding:  5px 0 5px 5px;
+    font-size: 20px;
+}
+
+.main_menu_link
+{
+  margin : 10px;
+  color : white;
+}
+
+.main_menu:hover
+{
+  color : greenyellow;
+}
