@@ -1,4 +1,6 @@
-
+self.onmessage = function(message) {
+    
+}
 
 fibonaccie = (limit) => {
     nb1 = 0;
