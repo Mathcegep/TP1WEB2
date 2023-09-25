@@ -14,16 +14,17 @@ class Fibonacci extends Component {
 
     showFinalRes = (res) => {
         this.setState({result: res})
-        console.log(this.state.limit)
     }
 
     fibonaccie = () => {
         const fib = [0, 1];
         var i = 2;
-        this.showFinalRes(this.fibonacciCalc(this.state.limit, fib, i));
+        var limit = this.state.limit;
+        this.showFinalRes(this.fibonacciCalc(limit, fib, i));
     }
     
     fibonacciCalc(limit, fib, i) {
+        console.log(limit+" "+i);
         if(i < limit) {
             fib[i] = fib[i - 1] + fib[i - 2];
             i = i + 1;
