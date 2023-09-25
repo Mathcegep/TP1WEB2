@@ -9,10 +9,12 @@ class Fibonacci extends Component {
 
     changeState = (st) => {
         this.setState({limit: st})
+
     }
 
     showFinalRes = (res) => {
         this.setState({result: res})
+        console.log(this.state.limit)
     }
 
     fibonaccie = () => {
@@ -35,7 +37,7 @@ class Fibonacci extends Component {
         return (
             <div>
                 <h1>Fibonacci</h1>
-                <textarea onChange={() => this.changeState()}></textarea>
+                <input onChange={(e) => this.changeState(e.target.value)}></input>
                 <button  onClick={() => this.fibonaccie()}>Commencer</button>
                 <p>{this.state.result}</p>
             </div>
