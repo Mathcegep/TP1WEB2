@@ -2,9 +2,8 @@ import CryptoTmpRow from "./CryptoTmpRow";
 
 function CryptoChild(props) {
     
-    if(props.modification == true){
+    if(props.modification == props.id){
         return (
-            
             <tr>
                 <td> <p>{props.cel1}</p></td>
                 <td> <p>{props.cel2}</p></td>
