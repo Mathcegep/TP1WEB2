@@ -21,7 +21,7 @@ function CryptoChild(props) {
                             <td> <p>{props.cel1}</p></td>
                             <td> <p>{props.cel2}</p></td>
                             <td> <p>{props.cel1 * props.cel2}</p></td>
-                            <button onClick={this.props.onClick}></button>
+                            <button onClick={props.onClick(props.id)}></button>
                         </tr>
                         <CryptoTmpRow/>
                     </table>
