@@ -3,7 +3,13 @@ import CryptoChild from "./CryptoChild";
 
 class Crypto extends Component {
     state = {
-        rowState : 0
+        rowState : 0,
+        data : new Map([
+            ["1", ["123", "42"]],
+            ["2", ["123", "42"]],
+            ["3", ["123", "42"]],
+            ["4", ["123", "42"]]
+        ])
     }
 
     getIdOnClick = (id) => {
