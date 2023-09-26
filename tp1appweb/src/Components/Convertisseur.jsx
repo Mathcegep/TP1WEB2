@@ -24,9 +24,9 @@ class Convertisseur extends Component {
     {
         return (
             <div>
-                <Enfantconvertisseur inputValue={this.state.valeurCm} valeurEnCm="1" texteAAfficher="Saisissez la mesure en Centimètres" callback={(nombreEntree, valeurCm) => { this.conversion() }} />
-                <Enfantconvertisseur inputValue={this.state.valeurM} valeurEnCm="100" texteAAfficher="Saisissez la mesure en Mètres"/>
-                <Enfantconvertisseur inputValue={this.state.valeurKm} valeurEnCm="100000" texteAAfficher="Saisissez la mesure en Kilomètres"/>
+                <Enfantconvertisseur inputValue={this.state.valeurCm} valeurEnCm="1" texteAffichage="Saisissez la mesure en Centimètres" callback={(valeurCm) => { this.conversion(valeurCm) }} />
+                <Enfantconvertisseur inputValue={this.state.valeurM} valeurEnCm="100" texteAffichage="Saisissez la mesure en Mètres"  callback={(valeurCm) => { this.conversion(valeurCm) }}/>
+                <Enfantconvertisseur inputValue={this.state.valeurKm} valeurEnCm="100000" texteAffichage="Saisissez la mesure en Kilomètres"  callback={(valeurCm) => { this.conversion(valeurCm) }}/>
             </div>
         );
     }
