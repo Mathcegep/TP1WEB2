@@ -6,8 +6,9 @@ class Crypto extends Component {
         rowState : 0
     }
 
-    getIdOnClick(id) {
+    getIdOnClick = (id) => {
         this.setState({rowState : id});
+        console.log(id)
     }
 
     render()
@@ -20,12 +21,13 @@ class Crypto extends Component {
                             <th>Modele</th>
                             <th>Marque</th>
                             <th>Prix</th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <CryptoChild id="1" cel1="123" cel2="29" modification={this.state.rowState} onClick={(e) => this.getIdOnClick(e)}/>
-                    <CryptoChild id="2" cel1="123" cel2="29" modification={this.state.rowState} onClick={(e) => this.getIdOnClick(e)}/>
-                    <CryptoChild id="3" cel1="123" cel2="29" modification={this.state.rowState} onClick={(e) => this.getIdOnClick(e)}/>
-                    <CryptoChild id="4" cel1="123" cel2="29" modification={this.state.rowState} onClick={(e) => this.getIdOnClick(e)}/>
+                    <CryptoChild id="1" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild id="2" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild id="3" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild id="4" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
                 </table>
             </div>
         );
