@@ -24,7 +24,6 @@ class Fibonacci extends Component {
     }
     
     fibonacciCalc(limit, i, n1, n2, nextTerm, total) {
-        //console.log(limit+" "+i);
         if(i <= limit) {
             nextTerm = n1 + n2;
             n1 = n2;
