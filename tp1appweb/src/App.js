@@ -2,13 +2,13 @@ import logo from './logo.svg';
 import React from 'react';
 import './App.css';
 import { BrowserRouter , NavLink, Route, Routes} from 'react-router-dom';
-import  Home  from './Components/Home';
+import Home  from './Components/Home';
 import Fibonacie from './Components/Fibonacie';
 import Crypto from './Components/Crypto';
 import Convertisseur from './Components/Convertisseur';
 import Calendrier from './Components/Calendrier';
 import Tableau from './Components/Tableau';
-import Caroussel from './Components/Carousel';
+import CarousselPage from './Components/CarouselPage';
 
 
 function App() {
@@ -34,18 +34,18 @@ function App() {
           <NavLink to="/Tableau">
             <div class="main_menu_link">Tableau</div>
           </NavLink>
-          <NavLink to="/Caroussel">
+          <NavLink to="/Carousel">
             <div class="main_menu_link">Caroussel</div>
           </NavLink>
         </div>
       <Routes>
-          <Route exact path="/Home" element={<Home/>}/>
-          <Route exact path="/Fibonaccie" element={<Fibonacie/>}/>
+          <Route exact path="/Home"       element={<Home/>}/>
+          <Route exact path="/Fibonacie" element={<Fibonacie/>}/>
           <Route exact path="/Fibonaccie" element={<Crypto/>}/>
           <Route exact path="/Fibonaccie" element={<Convertisseur/>}/>
           <Route exact path="/Fibonaccie" element={<Calendrier/>}/>
           <Route exact path="/Fibonaccie" element={<Tableau/>}/>
-          <Route exact path="/Fibonaccie" element={<Caroussel/>}/>
+          <Route exact path="/Carousel"   element={<CarousselPage/>}/>
       </Routes>
       </BrowserRouter>
       </div>

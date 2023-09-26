@@ -55,3 +55,18 @@
 {
   color : greenyellow;
 }
+
+
+.carousel
+{
+  width: 50%;
+  margin: auto;
+  margin-top: 5cm;
+}
+
+
+.imageCarousel
+{
+  width: 10cm;
+  height: 6cm;
+}
