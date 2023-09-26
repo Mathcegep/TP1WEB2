@@ -9,7 +9,6 @@ class Fibonacci extends Component {
 
     changeState = (st) => {
         this.setState({limit: st})
-
     }
 
     showFinalRes = (res) => {
@@ -17,20 +16,22 @@ class Fibonacci extends Component {
     }
 
     fibonaccie = () => {
-        const fib = [0, 1];
-        var i = 2;
+        var n1 = 0, n2 = 1, nextTerm;
+        var i = 1;
         var limit = this.state.limit;
-        this.showFinalRes(this.fibonacciCalc(limit, fib, i));
+        var total = 0;
+        this.fibonacciCalc(limit, i, n1, n2, nextTerm, total);
     }
     
-    fibonacciCalc(limit, fib, i) {
-        console.log(limit+" "+i);
-        if(i < limit) {
-            fib[i] = fib[i - 1] + fib[i - 2];
-            i = i + 1;
-            this.fibonacciCalc(limit, fib, i);
+    fibonacciCalc(limit, i, n1, n2, nextTerm, total) {
+        //console.log(limit+" "+i);
+        if(i <= limit) {
+            nextTerm = n1 + n2;
+            n1 = n2;
+            total = total + n1;
+            this.fibonacciCalc(limit, i, n1, n2, nextTerm, total);
         } else {
-
+            this.showFinalRes(total);
         }
     }
 
