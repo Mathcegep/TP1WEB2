@@ -4,6 +4,10 @@ function CryptoChild(props) {
 
     var handleClick = () => {
         props.onClick(props.id);
+    };
+
+    var updateCel = (cel1, cel2) => {
+        props.update(props.id, cel1, cel2);
     }
     
     if(props.modification !== props.id){
@@ -27,9 +31,9 @@ function CryptoChild(props) {
             <td> <p>{props.cel1 * props.cel2}</p></td>
             <td></td>
         </tr>
-        <CryptoTmpRow />
+        <CryptoTmpRow cell1={props.cel1} cell2={props.cel2} updatevalues={updateCel}/>
         </>
-            );
+        );
     }
 }
 

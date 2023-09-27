@@ -5,16 +5,23 @@ class Crypto extends Component {
     state = {
         rowState : 0,
         data : new Map([
-            ["1", ["123", "42"]],
-            ["2", ["123", "42"]],
-            ["3", ["123", "42"]],
-            ["4", ["123", "42"]]
+            ["1", ["254", "13"]],
+            ["2", ["123", "54"]],
+            ["3", ["73", "5"]],
+            ["4", ["343", "19"]]
         ])
     }
 
     getIdOnClick = (id) => {
         this.setState({rowState : id});
-        console.log(id)
+    }
+
+    updateValue = (id, cel1, cel2) => {
+        var updData = this.state.data;
+        updData.set(id, [cel1, cel2]);
+        console.log(updData);
+        this.setState({data : updData});
+        this.setState({rowState : 0});
     }
 
     render()
@@ -30,10 +37,10 @@ class Crypto extends Component {
                             <th></th>
                         </tr>
                     </thead>
-                    <CryptoChild id="1" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
-                    <CryptoChild id="2" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
-                    <CryptoChild id="3" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
-                    <CryptoChild id="4" cel1="123" cel2="29" modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="1" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="2" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="3" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="4" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
                 </table>
             </div>
         );
