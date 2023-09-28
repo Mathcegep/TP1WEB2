@@ -37,10 +37,13 @@ class Crypto extends Component {
                             <th></th>
                         </tr>
                     </thead>
+                    {
+                        //Pour optimiser utiliser une foreach
+                    }
                     <CryptoChild update={this.updateValue} id="1" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
-                    <CryptoChild update={this.updateValue} id="2" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
-                    <CryptoChild update={this.updateValue} id="3" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
-                    <CryptoChild update={this.updateValue} id="4" cel1={this.state.data.get("1")[0]} cel2={this.state.data.get("1")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="2" cel1={this.state.data.get("2")[0]} cel2={this.state.data.get("2")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="3" cel1={this.state.data.get("3")[0]} cel2={this.state.data.get("3")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
+                    <CryptoChild update={this.updateValue} id="4" cel1={this.state.data.get("4")[0]} cel2={this.state.data.get("4")[1]} modification={this.state.rowState} onClick={this.getIdOnClick}/>
                 </table>
             </div>
         );

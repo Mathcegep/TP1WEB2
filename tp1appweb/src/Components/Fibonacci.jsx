@@ -16,6 +16,27 @@ class Fibonacci extends Component {
     }
 
     fibonaccie = () => {
+        var n1 = 0, n2 = 1;
+        var i = 1;
+        var limit = this.state.limit;
+        var total = 0;
+        this.fibonacciCalc(limit, i, n1, n2);
+    }
+    
+    fibonacciCalc(limit, i, n1, n2) {
+        let nextTerm = n1 + n2;
+        
+        if(i < limit) {
+            n1 = n2;
+            i =  i+1;
+            this.fibonacciCalc(limit, i, n2, nextTerm);
+        } else {
+            this.showFinalRes(n2);
+        }
+    }
+
+    /*
+    fibonaccie = () => {
         var n1 = 0, n2 = 1, nextTerm;
         var i = 1;
         var limit = this.state.limit;
@@ -28,12 +49,13 @@ class Fibonacci extends Component {
             nextTerm = n1 + n2;
             n1 = n2;
             total = total + n1;
+            i =  i+1;
             this.fibonacciCalc(limit, i, n1, n2, nextTerm, total);
         } else {
             this.showFinalRes(total);
         }
     }
-
+*/
     render() {
         return (
             <div>
