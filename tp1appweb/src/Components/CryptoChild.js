@@ -1,21 +1,29 @@
+import { Component } from "react";
 import CryptoTmpRow from "./CryptoTmpRow";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-function CryptoChild(props) {
+function CryptoChild({update, id, cel1, cel2, modification, onClick}) {
+
+    Component.propTypes = {
+        id: propTypes.string,
+        cel1: propTypes.string,
+        cel2: propTypes.string
+    }
 
     var handleClick = () => {
-        props.onClick(props.id);
+        onClick(id);
     };
 
-    var updateCel = (cel1, cel2) => {
-        props.update(props.id, cel1, cel2);
+    var updateCel = (xcel1, xcel2) => {
+        update(id, xcel1, xcel2);
     }
     
-    if(props.modification !== props.id){
+    if(modification !== id){
         return (
             <tr>
-                <td> <p>{props.cel1}</p></td>
-                <td> <p>{props.cel2}</p></td>
-                <td> <p>{props.cel1 * props.cel2}</p></td>
+                <td> <p>{cel1}</p></td>
+                <td> <p>{cel2}</p></td>
+                <td> <p>{cel1 * cel2}</p></td>
                 <button onClick={handleClick}>Edit</button>
             </tr>
             );
@@ -25,13 +33,13 @@ function CryptoChild(props) {
         return (
             <>
             <tr>
-            {console.log(props.modification)}
-            <td> <p>{props.cel1}</p></td>
-            <td> <p>{props.cel2}</p></td>
-            <td> <p>{props.cel1 * props.cel2}</p></td>
+            {console.log(modification)}
+            <td> <p>{cel1}</p></td>
+            <td> <p>{cel2}</p></td>
+            <td> <p>{cel1 * cel2}</p></td>
             <td></td>
         </tr>
-        <CryptoTmpRow cell1={props.cel1} cell2={props.cel2} updatevalues={updateCel}/>
+        <CryptoTmpRow updatevalues={updateCel}/>
         </>
         );
     }

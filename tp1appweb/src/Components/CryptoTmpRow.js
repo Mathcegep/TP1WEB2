@@ -1,4 +1,7 @@
-function CryptoTmpRow(props) {
+import { Component } from "react";
+
+function CryptoTmpRow({updatevalues}) {
+
     var newVal1 = 0;
     var newVal2 = 0;
     var setNewCel1 = (e) => {
@@ -8,7 +11,7 @@ function CryptoTmpRow(props) {
         newVal2 = e;
     }
     var updateCurrent = () => {
-        props.updatevalues(newVal1, newVal2);
+        updatevalues(newVal1, newVal2);
     }
 
     return (
