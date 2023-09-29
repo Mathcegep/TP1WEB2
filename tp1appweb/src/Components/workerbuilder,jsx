@@ -1,0 +1,10 @@
+class WorkerBuilder extends Worker {
+  constructor(worker) {
+    super(worker)
+    let code = worker.toString();
+    let blob = new Blob([`(${code})()`]);
+    return new Worker(URL.createObjectURL(blob));
+  }
+}
+
+export default WorkerBuilder;

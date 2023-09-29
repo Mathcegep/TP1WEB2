@@ -8,6 +8,7 @@ import Calendrier from './Components/Calendrier';
 import Tableau from './Components/Tableau';
 import CarouselPage from './Components/CarouselPage';
 import Home from './Components/Home';
+import FibonacciWorkerPage from './Components/FibonachiWorkerPage';
 
 function App() {
   return (
@@ -36,10 +37,17 @@ function App() {
           <NavLink to="/Caroussel">
             <div className="main_menu_link">Caroussel</div>
           </NavLink>
+
+          <NavLink to="/FibonacciWebWorker">
+            <div>
+              Web worker fibonnaci
+            </div>
+            </NavLink>
         </div>
         <Routes>
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Fibonacci" element={<Fibonacci />} />
+          <Route exact path="/FibonacciWebWorker" element={<FibonacciWorkerPage/>} />
           <Route exact path="/Crypto" element={<Crypto />} />
           <Route exact path="/Convertisseur" element={<Convertisseur />} />
           <Route exact path="/Calendrier" element={<Calendrier />} />

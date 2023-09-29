@@ -19,8 +19,7 @@ class Fibonacci extends Component {
         var n1 = 0, n2 = 1;
         var i = 1;
         var limit = this.state.limit;
-        var total = 0;
-        this.fibonacciCalc(limit, i, n1, n2);
+        this.showFinalRes(this.fibonacciCalc(limit, i, n1, n2));
     }
     
     fibonacciCalc(limit, i, n1, n2) {
@@ -29,9 +28,9 @@ class Fibonacci extends Component {
         if(i < limit) {
             n1 = n2;
             i =  i+1;
-            this.fibonacciCalc(limit, i, n2, nextTerm);
+            return this.fibonacciCalc(limit, i, n2, nextTerm);
         } else {
-            this.showFinalRes(n2);
+            return n2;
         }
     }
 
